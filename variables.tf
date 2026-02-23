@@ -20,9 +20,9 @@ variable "aggregator" {
 variable "authorization" {
   description = "Object specifying the configuration of a Config Aggregator Authorization"
   type = object({
-    account_id = string
-    region     = string
-    tags       = map(string)
+    account_id            = string
+    authorized_aws_region = string
+    tags                  = map(string)
   })
   default = null
 }

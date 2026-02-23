@@ -15,7 +15,7 @@ module "config_aggregator" {
 
 resource "random_string" "this" {
   length  = 6
-  number  = false
+  numeric = false
   special = false
   upper   = false
 }

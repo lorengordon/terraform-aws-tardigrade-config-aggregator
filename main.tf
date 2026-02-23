@@ -12,7 +12,7 @@ module "authorization" {
   source = "./modules/authorization"
   count  = var.authorization != null ? 1 : 0
 
-  account_id = var.authorization.account_id
-  region     = var.authorization.region
-  tags       = var.authorization.tags
+  account_id            = var.authorization.account_id
+  authorized_aws_region = var.authorization.authorized_aws_region
+  tags                  = var.authorization.tags
 }

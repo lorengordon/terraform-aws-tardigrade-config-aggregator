@@ -3,7 +3,7 @@ variable "account_id" {
   type        = string
 }
 
-variable "region" {
+variable "authorized_aws_region" {
   description = "Region where the authorized aggregator exists"
   type        = string
 }
