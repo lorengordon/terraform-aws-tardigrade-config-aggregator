@@ -3,13 +3,10 @@ module "config_aggregator" {
 
   aggregator = {
     name = "tardigrade-config-aggregator-${random_string.this.result}"
-    tags = {}
     account_aggregation_source = {
       account_ids = [data.aws_caller_identity.current.account_id]
       all_regions = true
-      regions     = null
     }
-    organization_aggregation_source = null
   }
 }
 

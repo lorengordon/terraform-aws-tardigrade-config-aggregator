@@ -4,7 +4,6 @@ module "config_authorization" {
   authorization = {
     account_id            = data.aws_caller_identity.current.account_id
     authorized_aws_region = "us-east-1"
-    tags                  = {}
   }
 }
 
