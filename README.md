@@ -27,6 +27,7 @@ make mockstack/clean
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 6 |
 
 ## Providers
 
@@ -40,8 +41,8 @@ No resources.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_aggregator"></a> [aggregator](#input\_aggregator) | Object specifying the configuration of a Config Aggregator | <pre>object({<br/>    name = string<br/>    tags = map(string)<br/>    account_aggregation_source = object({<br/>      account_ids = list(string)<br/>      all_regions = bool<br/>      regions     = list(string)<br/>    })<br/>    organization_aggregation_source = object({<br/>      all_regions = bool<br/>      regions     = list(string)<br/>      role_arn    = string<br/>    })<br/>  })</pre> | `null` | no |
-| <a name="input_authorization"></a> [authorization](#input\_authorization) | Object specifying the configuration of a Config Aggregator Authorization | <pre>object({<br/>    account_id = string<br/>    region     = string<br/>    tags       = map(string)<br/>  })</pre> | `null` | no |
+| <a name="input_aggregator"></a> [aggregator](#input\_aggregator) | Object specifying the configuration of a Config Aggregator | <pre>object({<br/>    name = string<br/>    tags = optional(map(string), {})<br/>    account_aggregation_source = optional(object({<br/>      account_ids = list(string)<br/>      all_regions = optional(bool)<br/>      regions     = optional(list(string))<br/>    }))<br/>    organization_aggregation_source = optional(object({<br/>      role_arn    = string<br/>      all_regions = optional(bool)<br/>      regions     = optional(list(string))<br/>    }))<br/>  })</pre> | `null` | no |
+| <a name="input_authorization"></a> [authorization](#input\_authorization) | Object specifying the configuration of a Config Aggregator Authorization | <pre>object({<br/>    account_id            = string<br/>    authorized_aws_region = string<br/>    tags                  = optional(map(string), {})<br/>  })</pre> | `null` | no |
 
 ## Outputs
 
