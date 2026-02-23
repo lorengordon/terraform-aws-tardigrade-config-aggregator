@@ -7,8 +7,8 @@ variable "account_aggregation_source" {
   description = "Object of account sources to aggregate"
   type = object({
     account_ids = list(string)
-    all_regions = bool
-    regions     = list(string)
+    all_regions = optional(bool)
+    regions     = optional(list(string))
   })
   default = null
 }
@@ -16,9 +16,9 @@ variable "account_aggregation_source" {
 variable "organization_aggregation_source" {
   description = "Object with the AWS Organization configuration for the Config Aggregator"
   type = object({
-    all_regions = bool
-    regions     = list(string)
     role_arn    = string
+    all_regions = optional(bool)
+    regions     = optional(list(string))
   })
   default = null
 }

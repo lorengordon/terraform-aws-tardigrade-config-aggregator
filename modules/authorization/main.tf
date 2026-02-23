@@ -1,5 +1,5 @@
 resource "aws_config_aggregate_authorization" "this" {
-  account_id = var.account_id
-  region     = var.region
-  tags       = merge({ Name = "${var.account_id}:${var.region}" }, var.tags)
+  account_id            = var.account_id
+  authorized_aws_region = var.authorized_aws_region
+  tags                  = merge({ Name = "${var.account_id}:${var.authorized_aws_region}" }, var.tags)
 }

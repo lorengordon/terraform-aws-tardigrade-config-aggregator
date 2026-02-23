@@ -2,15 +2,14 @@ module "config_authorization" {
   source = "../../"
 
   authorization = {
-    account_id = data.aws_caller_identity.current.account_id
-    region     = "us-east-1"
-    tags       = {}
+    account_id            = data.aws_caller_identity.current.account_id
+    authorized_aws_region = "us-east-1"
   }
 }
 
 resource "random_string" "this" {
   length  = 6
-  number  = false
+  numeric = false
   special = false
   upper   = false
 }
